@@ -1,0 +1,11 @@
+package nlp
+
+def openFile(x: fileName) {
+  scala.io.Source.fromFile(fileName)
+    .getLines
+    .flatMap(_.split("\\W+))
+    .foldLeft(Map.empty[String, Int]) {
+      (count,word)=>count+(word->(count.getOrElse(word,0)+1))
+  }
+}
+
