@@ -24,20 +24,8 @@ object Process {
 	}
 
 	def countUniqueFrequencies(words: Array[String]) : IndexedSeq[(String,Int)] = {
-		var map:Map[String,Int] = Map()
-
-		var i = 0
-		for(i <- 0 to words.length-1) {
-		  if(map.contains(words(i))) {
-		    map(words(i)) += 1
-		  } else {
-		    map += (words(i) -> 1)
-		  }
-		}
-
-		val list = ListMap(map.toList.sortBy{_._2}:_*).toIndexedSeq.reverse
-
-		return list 
+		val stops = new Array[String](1)
+		return countUniqueFrequenciesWithStop(words, stops)
 	}
 
 	def countUniqueFrequenciesWithStop(words: Array[String], stops: Array[String]) : IndexedSeq[(String,Int)] = {
@@ -56,21 +44,6 @@ object Process {
 
 		return ListMap(map.toList.sortBy{_._2}:_*).toIndexedSeq.reverse
 	}
-
-	// def countFrequencyFrequencies(freqs: IndexedSeq[(String,Int)]) : Array[Int] = {
-		// val largest: Int = freqs.head._2.asInstanceOf[Int]
-
-		// val map:Map[Int,Int] = Map()
-
-		// var seq = ("",0)
-		// for(seq <- freqs) {
-		// 	if(map.contains(freqs._1)) {
-		// 		map(freqs._1) += 1
-		// 	}
-		// }
-
-		// return 0
-	// }
 
 	def countFrequencyFrequencies(freqs: IndexedSeq[(String,Int)]) : IndexedSeq[(Int,Int)] = {
 		val map:Map[Int,Int] = Map()
