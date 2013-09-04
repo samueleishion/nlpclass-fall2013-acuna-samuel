@@ -95,7 +95,7 @@ object Process {
 	}
 
 	def conjugate(verb: String, given: String) : String = {
-		if(given(given.length-1)=='s') 
+		if(given.substring(given.length()-1)=='s') 
 			return verb
 		return verb+"s"
 	}
