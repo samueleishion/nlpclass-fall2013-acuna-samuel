@@ -58,7 +58,7 @@ object Process {
 			}
 		}
 
-		return ListMap(map.toList.sortBy{_._2}:_*).toIndexedSeq.reverse
+		return ListMap(map.toList.sortBy{_._1}.reverse.sortBy{_._2}:_*).toIndexedSeq.reverse 
 	}
 
 	def pluralOrSingular(singularForm: String, quantity: Int) : String = {

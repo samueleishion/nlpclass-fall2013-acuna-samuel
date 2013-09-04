@@ -32,7 +32,7 @@ object WordFreqFreq {
 				var words = Process.pluralOrSingular("word",freq._2)
 				var times = Process.pluralOrSingular("time",freq._1)
 				var appear = Process.conjugate("appear",words)
-				if(i >= lim-5 && i <= lim) {
+				if(i > lim-5 && i <= lim) {
 					println("%d %s %s %d %s".format(freq._2,words,appear,freq._1,times))
 				}
 				i += 1
