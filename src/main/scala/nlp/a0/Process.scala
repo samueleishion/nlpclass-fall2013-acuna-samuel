@@ -8,6 +8,7 @@ import scala.collection.immutable.ListMap
 
 object Process {
 
+	// Turns text into a string. 
 	def textToString(book: String) : String = {
 		val source = Source.fromFile(book) 
 		val string = source.getLines mkString "\n"
@@ -15,6 +16,8 @@ object Process {
 		return string 
 	}
 
+	// Filters punctuation and numbers on a String and 
+	// turns it into an Array of Strings split by lines
 	def filterText(text: String) : Array[String] = {
 		var string = text.replaceAll("[^A-Za-z]"," ")
 		string = string.replaceAll(" +"," ")
@@ -23,11 +26,14 @@ object Process {
 		return words
 	}
 
+	// Counts unique frequencies without stop words
 	def countUniqueFrequencies(words: Array[String]) : IndexedSeq[(String,Int)] = {
 		val stops = new Array[String](1)
 		return countUniqueFrequenciesWithStop(words, stops)
 	}
 
+	// Counts unique frequencies given a file with 
+	// stopwords 
 	def countUniqueFrequenciesWithStop(words: Array[String], stops: Array[String]) : IndexedSeq[(String,Int)] = {
 		var map:Map[String,Int] = Map()
 
@@ -45,6 +51,8 @@ object Process {
 		return ListMap(map.toList.sortBy{_._2}:_*).toIndexedSeq.reverse
 	}
 
+	// Counts the frequency of frequencies by mapping 
+	// the frequency to its count 
 	def countFrequencyFrequencies(freqs: IndexedSeq[(String,Int)]) : IndexedSeq[(Int,Int)] = {
 		val map:Map[Int,Int] = Map()
 
@@ -61,18 +69,24 @@ object Process {
 		return ListMap(map.toList.sortBy{_._1}.reverse.sortBy{_._2}:_*).toIndexedSeq.reverse 
 	}
 
+	// Returns the number form of a noun given the 
+	// amount/quentity of objects it represents 
+	// (excludes exceptions)
 	def pluralOrSingular(singularForm: String, quantity: Int) : String = {
 		if(quantity>1) 
 			return singularForm+"s" 
 		return singularForm 
 	}
 
+	// Conjugates a verb based on the number of 
+	// a given noun (excludes exceptions)
 	def conjugate(verb: String, given: String) : String = {
 		if(given.substring(given.length()-1)=='s') 
 			return verb
 		return verb+"s"
 	}
 
+	// Counts categories on a formatted file
 	def countCategories(lines: Array[String]) : collection.immutable.Map[String,Int] = {
 		var i = 0
 		var line: Array[String] = Array[String]()
@@ -90,6 +104,7 @@ object Process {
 		return map.toList.sortBy(_._1).toMap
 	}
 
+	// Gets features and values of a formatted file
 	def getFeatures(lines: Array[String]) : collection.immutable.Map[String,Map[String,Map[String,Int]]] = {
 		var map = Map[String,Map[String,Map[String,Int]]]() 
 		var i = 0
