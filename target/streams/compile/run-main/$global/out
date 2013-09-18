@@ -1,10 +1,10 @@
-[0m[[0minfo[0m] [0mRunning nlp.a0.WordCount /Users/samueleishion/Documents/alice.txt[0m
+[0m[[0minfo[0m] [0mRunning nlp.a0.CountFeatures data/data2.txt[0m
 [0m[[0mdebug[0m] [0mStarting sandboxed run...[0m
 [0m[[0mdebug[0m] [0mWaiting for threads to exit or System.exit to be called.[0m
 [0m[[0mdebug[0m] [0m  Classpath:[0m
 [0m[[0mdebug[0m] [0m	/Volumes/Macintosh HD/Users/samueleishion/Documents/School/UT/2013-5-FALL/LIN 353N/_hwks/target/scala-2.10/classes[0m
 [0m[[0mdebug[0m] [0m	/Users/samueleishion/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
-[0m[[0mdebug[0m] [0m	/Users/samueleishion/.ivy2/cache/com.utcompling/nlpclass-fall2013_2.10/jars/nlpclass-fall2013_2.10-0001.jar[0m
+[0m[[0mdebug[0m] [0m	/Users/samueleishion/.ivy2/cache/com.utcompling/nlpclass-fall2013_2.10/jars/nlpclass-fall2013_2.10-0002.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/samueleishion/.ivy2/cache/dhg/scala-util_2.10/jars/scala-util_2.10-1.0.0-SNAPSHOT.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/samueleishion/.ivy2/cache/org.scalaz/scalaz-core_2.10/bundles/scalaz-core_2.10-7.0.3.jar[0m
 [0m[[0mdebug[0m] [0m	/Users/samueleishion/.ivy2/cache/org.jfree/jfreechart/jars/jfreechart-1.0.14.jar[0m

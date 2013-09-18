@@ -4,7 +4,7 @@
 		module="nlpclass-instructor_2.10"
 		revision="0.0.1"
 		status="integration"
-		publication="20130901124935"
+		publication="20130918164211"
 	>
 		<description>
 		nlpclass-instructor
@@ -32,7 +32,7 @@
 	</publications>
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.2" conf="compile->default(compile)"/>
-		<dependency org="com.utcompling" name="nlpclass-fall2013_2.10" rev="0001" changing="true" conf="compile->default(compile)"/>
+		<dependency org="com.utcompling" name="nlpclass-fall2013_2.10" rev="0002" changing="true" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe" name="scalalogging-log4j_2.10" rev="1.0.1" conf="compile->default(compile)"/>
 		<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.0-beta3" conf="compile->default(compile)"/>
 		<dependency org="junit" name="junit" rev="4.10" conf="test->default(compile)"/>
