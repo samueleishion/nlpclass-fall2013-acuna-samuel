@@ -19,4 +19,4 @@ sbt "run-main nlp.a1.FeatureFileAsDistribution -test"
 ### ConditionalProbability class
 + __apply(a, given)__: calculates and returns conditional probability of a value given a particular label
 
-+ __sample()__: samples the conditional probability distribution with a random number
++ __sample(a)__: samples the conditional probability distribution with a random number given a particular condition
