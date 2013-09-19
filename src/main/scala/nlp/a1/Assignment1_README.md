@@ -4,7 +4,7 @@
 + __fromFile(filename)__: gets the probability distribution and conditional probability distribution of the features and 
 values contained in the file provided. 
 
-    ##### Testing
+    #### Testing
     A testing option is provided by running main and adding the test flag. This will run the data2.txt file, calculate, and display some probabilities. To see this, type
 
     ```
