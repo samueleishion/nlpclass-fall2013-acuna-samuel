@@ -9,7 +9,7 @@ class ConditionalProbabilityDistribution[A,B]() extends ConditionalProbabilityDi
 	}
 
 	def sample(given: A): B = {
-		val b: B = null.asInstanceOf[B]
+		val b: B = null.asInstanceOf[B]	
 		return b
 	}
 }

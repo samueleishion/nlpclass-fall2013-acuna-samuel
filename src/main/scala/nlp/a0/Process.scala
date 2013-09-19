@@ -105,7 +105,7 @@ object Process {
 	}
 
 	// Gets features and values of a formatted file
-	def getFeatures(lines: Array[String]) : collection.immutable.Map[String,Map[String,Map[String,Int]]] = {
+	def getFeatures(lines: Array[String]) : collection.immutable.Map[String,collection.immutable.Map[String,collection.immutable.Map[String,Int]]] = {
 		var map = Map[String,Map[String,Map[String,Int]]]() 
 		var i = 0
 		var j = 0
@@ -136,7 +136,14 @@ object Process {
 			}
 		}
 
+		map.toMap.map {
+			case (f,l) =>
+				f -> l.toMap.map {
+					case (a,b) =>
+						a -> b.toMap
+				}
+		}
 		
-		return map.toList.sortBy(_._1).toMap
+		// return map.toList.sortBy(_._1).toMap
 	}
 }
