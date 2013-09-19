@@ -1,17 +1,22 @@
 # Assignment 1 README</h1>
 
-## FeatureFileAsDistribution object
-1. <b>fromFile(filename)</b>: gets the probability distribution and conditional probability distribution of the features and 
+### FeatureFileAsDistribution object
++ __fromFile(filename)__: gets the probability distribution and conditional probability distribution of the features and 
 values contained in the file provided. 
 
-### Testng
+#### Testing
 A testing option is provided by running main and adding the test flag. This will run the data2.txt file, calculate, and display some probabilities. To see this, type
 
 ```
-sbn "run-main nlp.a1.FeatureFileAsDistribution -test"
+sbt "run-main nlp.a1.FeatureFileAsDistribution -test"
 ```
 
-## ProbabilityDistribution class
+### ProbabilityDistribution class
++ __apply(x)__: calculates and returns probability of a label based on the total count for labels
 
++ __sample()__: samples the probability distribution with a random number
 
-## ConditionalProbability class
+### ConditionalProbability class
++ __apply(a, given)__: calculates and returns conditional probability of a value given a particular label
+
++ __sample()__: samples the conditional probability distribution with a random number
