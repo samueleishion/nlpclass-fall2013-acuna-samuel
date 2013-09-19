@@ -17,6 +17,16 @@ object FeatureFileAsDistributions extends FeatureFileAsDistributionsToImplement 
 		println(f"p(label=neutral) = ${pLabel("neutral")}%.2f")
 		println(f"p(label=positive) = ${pLabel("positive")}%.2f")
 
+		val featureNeg = pFeatureValueGivenLabelByFeature("neg")
+		println(f"p(neg=bad | label=negative) = ${featureNeg("bad","negative")}%.2f")
+
+		val featurePos = pFeatureValueGivenLabelByFeature("pos")
+		println(f"p(pos=best | label=negative) = ${featurePos("best","negative")}%.2f")
+
+		val featureWord = pFeatureValueGivenLabelByFeature("word")
+		println(f"p(word=best | label=negative) = ${featureNeg("best","negative")}%.2f")
+		println(f"p(word=best | label=positive) = ${featureNeg("best","postive")}%.2f")
+
 		println()
 	}
 
@@ -27,8 +37,8 @@ object FeatureFileAsDistributions extends FeatureFileAsDistributionsToImplement 
 
 		// Set returning variables
 		var set = Set[String]()
-		var prob = new ProbabilityDistribution[String](categories,features)
-		var map = Map[String,ConditionalProbabilityDistribution[String,String]]()
+		var prob = new ProbabilityDistribution[String](categories)
+		var map = collection.mutable.Map[String,ConditionalProbabilityDistribution[String,String]]()
 
 		// Modify set
 		var cat = ""
@@ -37,8 +47,13 @@ object FeatureFileAsDistributions extends FeatureFileAsDistributionsToImplement 
 		}
 		set.toSeq.toSet
 
-		// Modify prob
+		// Modify map
+		var feat = ""
+		for(feat <- features.keys) {
+			map += (feat -> new ConditionalProbabilityDistribution(features.get(feat).get))
+		}
+		val cond:collection.immutable.Map[String,ConditionalProbabilityDistribution[String,String]] = map.toMap
 
-		return (set, prob, map)
+		return (set, prob, cond)
 	}
 }
