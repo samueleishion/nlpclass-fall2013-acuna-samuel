@@ -18,6 +18,19 @@ class ConditionalProbabilityDistribution[A,B](features: Map[A,Map[B,Int]]) exten
 
 	def sample(given: A): B = {
 		val b: B = null.asInstanceOf[B]	
+
+		val random = scala.util.Random.nextDouble 
+		var probs = collection.mutable.Map[B,Double]()
+		var label: B = null.asInstanceOf[B]
+		var sum = 0.0
+		if(features.contains(given)) {
+			for(label <- features(given).keys) {
+				probs += (label -> apply(label,given))
+				sum += probs(label) 
+				if(sum>random) return label
+			}
+		} 
+
 		return b
 	}
 }
