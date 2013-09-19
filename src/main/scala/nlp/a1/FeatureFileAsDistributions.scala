@@ -11,22 +11,33 @@ object FeatureFileAsDistributions extends FeatureFileAsDistributionsToImplement 
 		val (labels,pLabel,pFeatureValueGivenLabelByFeature) = 
 			FeatureFileAsDistributions.fromFile("data/data2.txt")
 		
+		// These outputs should match the instructions page
 		println(labels) 
+		println()
 
 		println(f"p(label=negative) = ${pLabel("negative")}%.2f")
 		println(f"p(label=neutral) = ${pLabel("neutral")}%.2f")
 		println(f"p(label=positive) = ${pLabel("positive")}%.2f")
+		println()
 
 		val featureNeg = pFeatureValueGivenLabelByFeature("neg")
 		println(f"p(neg=bad | label=negative) = ${featureNeg("bad","negative")}%.2f")
+		println()
 
 		val featurePos = pFeatureValueGivenLabelByFeature("pos")
 		println(f"p(pos=best | label=negative) = ${featurePos("best","negative")}%.2f")
+		println(f"p(pos=best | label=positive) = ${featurePos ("best","positive")}%.2f")
+		println()
 
 		val featureWord = pFeatureValueGivenLabelByFeature("word")
-		println(f"p(word=best | label=negative) = ${featureNeg("best","negative")}%.2f")
-		println(f"p(word=best | label=positive) = ${featureNeg("best","postive")}%.2f")
+		println(f"p(word=best | label=negative) = ${featureWord("best","negative")}%.2f")
+		println(f"p(word=best | label=positive) = ${featureWord("best","positive")}%.2f")
+		println()
 
+		// These outputs should return zeros
+		println(f"p(word=error | label=negative) = ${featureNeg("error","negative")}%.2f") 
+		println(f"p(word=best | label=error) = ${featurePos("best","error")}%.2f") 
+		println(f"p(word=error | label=error) = ${featureWord("error","error")}%.2f") 
 		println()
 	}
 

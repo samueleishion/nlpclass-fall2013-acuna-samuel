@@ -6,7 +6,10 @@ import nlp.a0.Process
 class ProbabilityDistribution[B](labels: Map[B,Int]) extends ProbabilityDistributionToImplement[B] {
 	def apply(x: B): Double = {
 		val total = labels.foldLeft(0)(_+_._2).toDouble
-		val label = labels(x).toDouble
+		var label = 0.0; 
+
+		if(labels.contains(x)) label = labels(x).toDouble
+
 		return label/total
 	}
 

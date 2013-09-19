@@ -14,7 +14,7 @@
 [0m[[0mdebug[0m] [0m	external source: Set()[0m
 [0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Volumes/Macintosh HD/Users/samueleishion/Documents/School/UT/2013-5-FALL/LIN 353N/_hwks/src/main/scala/nlp/a1/FeatureFileAsDistributions.scala)[0m
 [0m[[0minfo[0m] [0mCompiling 1 Scala source to /Volumes/Macintosh HD/Users/samueleishion/Documents/School/UT/2013-5-FALL/LIN 353N/_hwks/target/scala-2.10/classes...[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 55a6c368, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 5437086a, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-deprecation[0m
 [0m[[0mdebug[0m] [0m	-d[0m
@@ -30,7 +30,7 @@
 [0m[[33mwarn[0m] [0mimport nlp.a1.ConditionalProbabilityDistribution[0m
 [0m[[33mwarn[0m] [0m              ^[0m
 [0m[[33mwarn[0m] [0mtwo warnings found[0m
-[0m[[0mdebug[0m] [0mScala compilation took 6.458245 s[0m
+[0m[[0mdebug[0m] [0mScala compilation took 8.248595 s[0m
 [0m[[0mdebug[0m] [0mStep 2 changed sources and immdediate dependencies:[0m
 [0m[[0mdebug[0m] [0m	Set()[0m
 [0m[[0mdebug[0m] [0mNon-trivial strongly connected components: [0m
