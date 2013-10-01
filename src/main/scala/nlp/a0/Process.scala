@@ -146,4 +146,27 @@ object Process {
 		
 		// return map.toList.sortBy(_._1).toMap
 	}
+
+	def getFeaturesToVectors(lines: Array[String]) : Vector[(String,Vector[(String,String)])] = {
+		// var vector = collection.mutable.Vector[(Label,Value)]()
+		var labels = List[(String,Vector[(String,String)])]() 
+
+		var i = 0
+		var j = 0
+
+		for(i<-0 to lines.length-1) {
+			val line = lines(i).split(',')
+			val label = line(line.length-1) 
+			for(j <- 0 to line.length-2) {
+				val temp = line(j).split("=")
+				val feat = temp(0) 
+				val value = temp(1) 
+				val v = Vector((feat,value))
+				val e = (label,v) 
+				labels ::= e 
+			}
+		}
+
+		return labels.to[Vector] 
+	}
 }
